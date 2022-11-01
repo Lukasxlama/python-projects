@@ -1,5 +1,4 @@
 from requests import get
-from os import remove as rm
 
 
 def thumbnail_download(url, filename="thumbnail.png"):
