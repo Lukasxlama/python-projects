@@ -24,7 +24,7 @@ def distance3(x1: float, x2: float, y1: float, y2: float, z1: float, z2: float):
     return distance
 
 def regular_polygon(x_start, y_start, corners, length):
-    angle_sum = 180 - (360 / corners)
+    angle_sum = (corners - 2) * 180 / corners + 180
     pu()
     lt(180)
     goto(x_start, y_start)
@@ -34,7 +34,6 @@ def regular_polygon(x_start, y_start, corners, length):
         lt(angle_sum)
     pu()
     home()
-    lt(0)
     pd()
     done()
     perimeter = round(corners * length, 2)
