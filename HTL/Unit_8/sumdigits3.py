@@ -7,7 +7,7 @@ catnr: 1BHIF-24
 
 ziffernsumme = 0
 try:
-    zahl = input("Gib eine Zahl ein (int, float): ")
+    zahl = input("Gib eine Zahl ein: ")
     zahl_output = zahl[:]
     if zahl[0] == "-":
         zahl = zahl.replace("-", "")

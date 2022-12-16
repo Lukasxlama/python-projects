@@ -1,26 +1,24 @@
 """
 author: Lukas Sanz
-file: squareroot.py.py
+file: squareroot.py
 catnr: 1BHIF-24
 """
 
+from math import sqrt
 
-from math import sqrt, pi
 
-
-zahl = float(input("Gib eine Zahl ein: "))
-iteration = int(input("Gib eine Anzahl von Iterationsschritten ein: "))
-x0, a = zahl, zahl
-x_iter = 0
-
-for _ in range(iteration):
-    x1 = (x0 + a / x0) / 2
-    x2 = (x1 + a / x1) / 2
-    x3 = (x2 + a / x2) / 2
-    ...
-    x_iter = (x_iter + a / x2) / 2
+def quadratwurzel(zahl, schritte):
+    x_n_minus_1 = zahl
+    for i in range(schritte):
+        x_n = (x_n_minus_1 + zahl / x_n_minus_1) / 2
+        x_n_minus_1 = x_n
+    fehler = abs(sqrt(zahl) - x_n)
     genau = sqrt(zahl)
-    # fehler = abs(pi - x_iter)  # ???
-    fehler = abs(x_iter - genau)
+    print(f"Errechnete Näherung: {x_n}")
+    print(f"Genaue Lösung: {genau}")
+    print(f"Fehler: {fehler}")
 
-print(f"\nNäherung = {x3}\nGenaue Lösung = {genau}\nFehler = {fehler}")
+
+zahl_ = int(input("Bitte gib die Zahl ein, von der die Quadratwurzel bestimmt werden soll: "))
+schritte_ = int(input("Bitte gib die Anzahl von Iterationsschritten ein: "))
+quadratwurzel(zahl_, schritte_)
